@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>NovaSalud Farmacia REST API - Swagger UI Documentación</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.9.0/swagger-ui.min.css" />
+    <link rel="icon" type="image/png" href="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.9.0/favicon-32x32.png" sizes="32x32" />
+    <style>
+        html { box-sizing: border-box; overflow: -moz-scrollbars-vertical; overflow-y: scroll; }
+        *, *:before, *:after { box-sizing: inherit; }
+        body { margin: 0; background: #fafafa; font-family: sans-serif; }
+        .topbar { display: none; }
+        .custom-header {
+            background: linear-gradient(135deg, #0d6efd 0%, #198754 100%);
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .custom-header h2 { margin: 0; font-size: 22px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+        .custom-header span { font-size: 14px; opacity: 0.9; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; }
+    </style>
+</head>
+
+<body>
+    <div class="custom-header">
+        <h2>💊 NovaSalud Farmacia Backend REST API <span>v1.0.0</span></h2>
+        <div>Documentación interactiva OpenAPI 3.0</div>
+    </div>
+
+    <div id="swagger-ui"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.9.0/swagger-ui-bundle.min.js" charset="UTF-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.9.0/swagger-ui-standalone-preset.min.js" charset="UTF-8"></script>
+    <script>
+    window.onload = function() {
+        const contextPath = window.location.pathname.substring(0, window.location.pathname.indexOf('/swagger'));
+        const specUrl = contextPath + '/api/openapi.json';
+
+        const ui = SwaggerUIBundle({
+            url: specUrl,
+            dom_id: '#swagger-ui',
+            deepLinking: true,
+            presets: [
+                SwaggerUIBundle.presets.apis,
+                SwaggerUIStandalonePreset
+            ],
+            plugins: [
+                SwaggerUIBundle.plugins.DownloadUrl
+            ],
+            layout: "StandaloneLayout",
+            displayRequestDuration: true,
+            docExpansion: "list",
+            filter: true
+        });
+
+        window.ui = ui;
+    };
+    </script>
+</body>
+</html>

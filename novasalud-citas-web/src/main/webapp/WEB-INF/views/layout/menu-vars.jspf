@@ -1,0 +1,36 @@
+<%@page pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="jakarta.tags.core"%>
+<%@taglib prefix="fn" uri="jakarta.tags.functions"%>
+
+<c:set var="rolMenu" value="${empty sessionScope.rolUsuario ? '' : fn:toUpperCase(sessionScope.rolUsuario)}" />
+<c:set var="rutaMenu" value="${requestScope['jakarta.servlet.forward.servlet_path']}" />
+<c:if test="${empty rutaMenu}"><c:set var="rutaMenu" value="${requestScope['javax.servlet.forward.servlet_path']}" /></c:if>
+<c:if test="${empty rutaMenu}"><c:set var="rutaMenu" value="${requestScope['jakarta.servlet.forward.request_uri']}" /></c:if>
+<c:if test="${empty rutaMenu}"><c:set var="rutaMenu" value="${requestScope['javax.servlet.forward.request_uri']}" /></c:if>
+<c:if test="${empty rutaMenu}"><c:set var="rutaMenu" value="${pageContext.request.servletPath}" /></c:if>
+<c:if test="${empty rutaMenu}"><c:set var="rutaMenu" value="${pageContext.request.requestURI}" /></c:if>
+
+<c:set var="esAdmin" value="${rolMenu == 'ADMIN'}" />
+<c:set var="esRecepcionista" value="${rolMenu == 'RECEPCIONISTA'}" />
+<c:set var="esDoctor" value="${rolMenu == 'DOCTOR'}" />
+<c:set var="esCajero" value="${rolMenu == 'CAJERO'}" />
+<c:set var="esDireccion" value="${rolMenu == 'DIRECCION'}" />
+
+<c:set var="activoInicio" value="${moduloActivo == 'inicio' || fn:contains(rutaMenu, '/inicio')}" />
+<c:set var="activoDireccion" value="${moduloActivo == 'direccion' || fn:contains(rutaMenu, '/direccion')}" />
+<c:set var="activoPacientes" value="${moduloActivo == 'pacientes' || fn:contains(rutaMenu, '/pacientes')}" />
+<c:set var="activoMedicos" value="${moduloActivo == 'medicos' || fn:contains(rutaMenu, '/medicos')}" />
+<c:set var="activoAgenda" value="${moduloActivo == 'agenda' || fn:contains(rutaMenu, '/agenda-medico')}" />
+<c:set var="activoEspecialidades" value="${moduloActivo == 'especialidades' || fn:contains(rutaMenu, '/especialidades')}" />
+<c:set var="activoHorarios" value="${moduloActivo == 'horarios' || fn:contains(rutaMenu, '/horarios')}" />
+<c:set var="activoCitas" value="${moduloActivo == 'citas' || fn:contains(rutaMenu, '/citas')}" />
+<c:set var="activoPagos" value="${moduloActivo == 'pagos' || fn:contains(rutaMenu, '/pagos')}" />
+<c:set var="activoTarifas" value="${moduloActivo == 'tarifas' || fn:contains(rutaMenu, '/tarifas')}" />
+<c:set var="activoReportes" value="${moduloActivo == 'reportes' || fn:contains(rutaMenu, '/reportes-financieros')}" />
+<c:set var="activoEstadisticas" value="${moduloActivo == 'estadisticas' || fn:contains(rutaMenu, '/estadisticas')}" />
+<c:set var="activoHistorias" value="${moduloActivo == 'historias' || fn:contains(rutaMenu, '/historia')}" />
+<c:set var="activoUsuarios" value="${moduloActivo == 'usuarios' || fn:contains(rutaMenu, '/usuarios')}" />
+
+<style>
+.list-group .menu-activo{background:linear-gradient(135deg,#1e3a8a 0%,#3b82f6 100%)!important;color:#fff!important;font-weight:700!important;border-left:6px solid #1e3a8a!important}.list-group .menu-activo i{color:#fff!important}
+</style>

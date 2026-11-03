@@ -1,0 +1,11 @@
+<%@page pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ include file="/WEB-INF/views/layout/menu-vars.jspf" %>
+<div class="card sidebar-card menu-sidebar-card d-none d-lg-block border-0 shadow-lg sticky-top" style="top: 1rem;">
+    <div class="list-group list-group-flush rounded-4 overflow-hidden">
+        <div class="list-group-item sidebar-title bg-success text-white fw-bold">
+            <i class="bi bi-layout-sidebar-inset me-2"></i>Men&uacute; cl&iacute;nico
+        </div>
+        <%@ include file="/WEB-INF/views/layout/menu-links.jspf" %>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<%@page pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ include file="/WEB-INF/views/layout/menu-vars.jspf" %>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+    <div class="offcanvas-header sidebar-title text-white">
+        <h5 class="offcanvas-title" id="sidebarMenuLabel"><i class="bi bi-layout-sidebar-inset me-2"></i>Men&uacute; cl&iacute;nico</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+        <div class="list-group list-group-flush">
+            <%@ include file="/WEB-INF/views/layout/menu-links.jspf" %>
+        </div>
+    </div>
+</div>
