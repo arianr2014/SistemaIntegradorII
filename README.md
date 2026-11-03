@@ -228,6 +228,8 @@ mvn clean package
 
 ## 8. Credenciales del Sistema
 
+> **Credencial de Administrador:** La contraseña para iniciar sesión como Administrador en el sistema es **`123456`**.
+
 ### 8.1. Usuarios Web para Pruebas
 
 #### Módulo de Citas Médicas:
@@ -240,9 +242,9 @@ mvn clean package
 #### Módulo de Farmacia:
 | Rol | Usuario | Contraseña | Perfil |
 |---|---|---|---|
-| **Administrador** | `admin` | `Farmacia2026*` | Gestión total, reportes de stock y kardex. |
-| **Químico Farmacéutico** | `qf_martinez` | `Farmacia2026*` | Validación de recetas médicas y control de inventario/lotes. |
-| **Técnico de Farmacia** | `cajero01` | `Farmacia2026*` | Venta por ventanilla y cobro de medicamentos. |
+| **Administrador** | `admin` | `123456` | Gestión total, reportes de stock y kardex. *(Ver script `database/Farmacia/updatecontraseña.sql`)* |
+| **Químico Farmacéutico** | `qf_martinez` | `123456` | Validación de recetas médicas y control de inventario/lotes. |
+| **Técnico de Farmacia** | `cajero01` | `123456` | Venta por ventanilla y cobro de medicamentos. |
 
 ---
 
